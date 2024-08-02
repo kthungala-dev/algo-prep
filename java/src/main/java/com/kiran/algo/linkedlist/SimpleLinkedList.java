@@ -2,18 +2,38 @@ package com.kiran.algo.linkedlist;
 
 import java.util.List;
 
-public class SimpleLinkedList <T extends Comparable> implements LinkedList {
+public class SimpleLinkedList<T extends Comparable<T>> implements LinkedList<T> {
 
-    private Node head = null;
+    private Node<T> head = null;
 
     @Override
-    public void addNode(Comparable data) {
+    public void addNode(T data) {
 
+        if (head == null) {
+            head = new Node<T>(data);
+        } else {
+            Node<T> currentNode = head;
+            while (currentNode.getNext() != null) {
+                currentNode = currentNode.getNext();
+            }
+            currentNode.setNext(new Node<>(data));
+        }
     }
 
     @Override
     public void printNodes() {
-
+        if (head == null) {
+            System.out.println("There is no node in the linked list");
+        } else {
+            Node<T> currentNode = head;
+            int i = 1;
+            while (currentNode != null) {
+                System.out.println(
+                    "Node<T> number " + i + ", the value it stores is " + currentNode.getData());
+                currentNode = currentNode.getNext();
+                i++;
+            }
+        }
     }
 
     @Override
@@ -22,7 +42,7 @@ public class SimpleLinkedList <T extends Comparable> implements LinkedList {
     }
 
     @Override
-    public Comparable popElement() {
+    public T popElement() {
         return null;
     }
 
@@ -32,22 +52,22 @@ public class SimpleLinkedList <T extends Comparable> implements LinkedList {
     }
 
     @Override
-    public void insertNth(int n, Comparable data) {
+    public void insertNth(int n, T data) {
 
     }
 
     @Override
-    public void insertSorted(Comparable data) {
+    public void insertSorted(T data) {
 
     }
 
     @Override
-    public void appendList(LinkedList ll) {
+    public void appendList(LinkedList<T> ll) {
 
     }
 
     @Override
-    public List<Node> frontBackSplit() {
+    public List<Node<T>> frontBackSplit() {
         return null;
     }
 
@@ -57,12 +77,12 @@ public class SimpleLinkedList <T extends Comparable> implements LinkedList {
     }
 
     @Override
-    public void changeHead(LinkedList destinationList) {
+    public void changeHead(LinkedList<T> destinationList) {
 
     }
 
     @Override
-    public LinkedList sortedMergeList(LinkedList otherList) {
+    public LinkedList<T> sortedMergeList(LinkedList<T> otherList) {
         return null;
     }
 

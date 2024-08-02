@@ -2,19 +2,19 @@ package com.kiran.algo.linkedlist;
 
 public class Node<T extends Comparable<T>> {
 
-    private T data;
-    private Node next;
+    private final T data;
+    private Node<T> next;
 
     public Node(T data) {
         this.data = data;
         this.next = null;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<T> next) {
         this.next = next;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return this.next;
     }
 
