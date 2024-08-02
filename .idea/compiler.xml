@@ -6,6 +6,9 @@
       <module name="collecions.main" target="11" />
       <module name="collecions.test" target="11" />
       <module name="collection" target="11" />
+      <module name="collections" target="11" />
+      <module name="collections.main" target="11" />
+      <module name="collections.test" target="11" />
       <module name="java.main" target="11" />
       <module name="java.test" target="11" />
     </bytecodeTargetLevel>
