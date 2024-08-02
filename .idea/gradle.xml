@@ -6,6 +6,11 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$/java" />
         <option name="gradleHome" value="" />
         <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/java" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
