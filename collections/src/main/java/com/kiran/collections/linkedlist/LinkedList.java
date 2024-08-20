@@ -4,16 +4,35 @@ import java.util.List;
 
 public interface LinkedList<T extends Comparable<T>> {
 
+    /**
+     * Append a new node to the end of the linked list.
+     */
     void addNode(T data);
 
+    /**
+     * Print all the nodes in the linked list.
+     */
     void printNodes();
 
+    /**
+     * Count the number of nodes in the linked list.
+     */
     int countNodes();
 
+    /**
+     * Return the first element in the linked list.
+     */
     T popElement();
 
+    /**
+     * Delete all the elements in the linked list.
+     */
     void deleteLinkedList();
 
+    /**
+     * Insert at the nth position in the list. Return if the number of nodes is
+     * less than n.
+     */
     void insertNth(int n, T data);
 
     /**

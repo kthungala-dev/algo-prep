@@ -38,27 +38,58 @@ public class SimpleLinkedList<T extends Comparable<T>> implements LinkedList<T> 
 
     @Override
     public int countNodes() {
+        if(head != null) {
+            int count = 0;
+            Node<T> current = head;
+            while (current != null) {
+                count++;
+                current = current.getNext();
+            }
+            return count;
+        }
         return 0;
     }
 
     @Override
     public T popElement() {
+        if(head != null) {
+            T data = head.getData();
+            head = head.getNext();
+            return data;
+        }
         return null;
     }
 
     @Override
     public void deleteLinkedList() {
-
+        head = null;
     }
 
     @Override
     public void insertNth(int n, T data) {
-
+        int count = countNodes();
+        if(n < 0 || count < n) {
+            return;
+        }
+        Node<T> newNode = new Node<T>(data);
+        if(n == 0) {
+            Node<T> nextNode = head;
+            head = newNode;
+            newNode.setNext(nextNode);
+        } else {
+            Node<T> currentNode = head;
+            int i = 1;
+            while (i < n - 1) {
+                currentNode = currentNode.getNext();
+                i++;
+            }
+            newNode.setNext(currentNode.getNext());
+            currentNode.setNext(newNode);
+        }
     }
 
     @Override
     public void insertSorted(T data) {
-
     }
 
     @Override
