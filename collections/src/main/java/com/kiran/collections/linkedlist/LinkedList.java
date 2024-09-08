@@ -5,6 +5,11 @@ import java.util.List;
 public interface LinkedList<T extends Comparable<T>> {
 
     /**
+     * For operational convience returning head. I know its bad idea.
+     */
+    Node<T> getHead();
+
+    /**
      * Append a new node to the end of the linked list.
      */
     void addNode(T data);

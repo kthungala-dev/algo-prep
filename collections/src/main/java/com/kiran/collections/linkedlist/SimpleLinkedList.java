@@ -1,10 +1,16 @@
 package com.kiran.collections.linkedlist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleLinkedList<T extends Comparable<T>> implements LinkedList<T> {
 
     private Node<T> head = null;
+
+    @Override
+    public Node<T> getHead() {
+        return head;
+    }
 
     @Override
     public void addNode(T data) {
@@ -90,26 +96,85 @@ public class SimpleLinkedList<T extends Comparable<T>> implements LinkedList<T> 
 
     @Override
     public void insertSorted(T data) {
+        if(countNodes() == 0 || head.getData().compareTo(data) > 0) {
+            Node<T> next = head;
+            head = new Node<T>(data);
+            head.setNext(next);
+        } else {
+            Node<T> current = head;
+            while(current.getNext() != null && current.getNext().getData().compareTo(data) < 0) {
+                current = current.getNext();
+            }
+            Node<T> next = current.getNext();
+            current.setNext(new Node<T>(data));
+            current.getNext().setNext(next);
+        }
     }
 
     @Override
     public void appendList(LinkedList<T> ll) {
+        if(ll.countNodes() == 0) {
+            return;
+        } else {
+            Node<T> current = ll.getHead();
+            while(current != null) {
+                addNode(current.getData());
+                current = current.getNext();
+            }
+        }
 
     }
 
     @Override
     public List<Node<T>> frontBackSplit() {
-        return null;
+        Node<T> l1;
+        Node<T> l2;
+        if(head == null) {
+            l1 = null;
+            l2 = null;
+        } else if(head.getNext() == null) {
+            l1 = head;
+            l2 = null;
+        } else {
+            Node<T> slow = head;
+            Node<T> fast = head;
+            while(fast != null) {
+                fast = fast.getNext();
+                if(fast == null) {
+                    break;
+                }
+                fast = fast.getNext();
+                if(fast != null) {
+                    slow = slow.getNext();
+                }
+            }
+            l1 = head;
+            l2 = slow.getNext();
+            slow.setNext(null);
+        }
+        List<Node<T>> result = new ArrayList<>();
+        result.add(l1);
+        result.add(l2);
+        return result;
     }
 
     @Override
     public void removeDuplicates() {
+        if(head != null) {
+            Node<T> current = head;
+            while(current.getNext() != null) {
+                if(current.getData().compareTo(current.getNext().getData()) == 0) {
+                    current.setNext(current.getNext().getNext());
+                } else {
+                    current = current.getNext();
+                }
+            }
+        }
 
     }
 
     @Override
     public void changeHead(LinkedList<T> destinationList) {
-
     }
 
     @Override
@@ -119,6 +184,15 @@ public class SimpleLinkedList<T extends Comparable<T>> implements LinkedList<T> 
 
     @Override
     public void reverseList() {
-
+        Node<T> reverse = null;
+        if(head != null) {
+            do{
+                T data = popElement();
+                Node<T> current = reverse;
+                reverse = new Node<T>(data);
+                reverse.setNext(current);
+            } while(head != null);
+            head = reverse;
+        }
     }
 }
