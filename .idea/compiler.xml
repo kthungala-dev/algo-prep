@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="collecions" target="11" />
-      <module name="collecions.main" target="11" />
-      <module name="collecions.test" target="11" />
-      <module name="collection" target="11" />
-      <module name="collections" target="11" />
-      <module name="collections.main" target="11" />
-      <module name="collections.test" target="11" />
-      <module name="java.main" target="11" />
-      <module name="java.test" target="11" />
-    </bytecodeTargetLevel>
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="1500" />
   </component>
 </project>

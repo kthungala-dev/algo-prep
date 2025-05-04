@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/algo-prep.iml" filepath="$PROJECT_DIR$/algo-prep.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/collecions.main.iml" filepath="$PROJECT_DIR$/.idea/modules/collecions.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/collecions.test.iml" filepath="$PROJECT_DIR$/.idea/modules/collecions.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/collections.iml" filepath="$PROJECT_DIR$/collections.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/collections.main.iml" filepath="$PROJECT_DIR$/.idea/modules/collections.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/collections.test.iml" filepath="$PROJECT_DIR$/.idea/modules/collections.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java.main.iml" filepath="$PROJECT_DIR$/.idea/modules/java.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java.test.iml" filepath="$PROJECT_DIR$/.idea/modules/java.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collections/src/main/main.iml" filepath="$PROJECT_DIR$/collections/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collections/src/test/test.iml" filepath="$PROJECT_DIR$/collections/src/test/test.iml" />
     </modules>
   </component>
 </project>

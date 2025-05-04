@@ -1,24 +1,24 @@
 package com.kiran.collections.linkedlist;
 
 public class Node<T extends Comparable<T>> {
+	
+	private final T data;
+	private Node<T> next;
 
-    private final T data;
-    private Node<T> next;
+	public Node(T data) {
+		this.data = data;
+		setNext(null);
+	}
 
-    public Node(T data) {
-        this.data = data;
-        this.next = null;
-    }
+	public T getData() {
+		return data;
+	}
 
-    public void setNext(Node<T> next) {
-        this.next = next;
-    }
+	public Node<T> getNext() {
+		return next;
+	}
 
-    public Node<T> getNext() {
-        return this.next;
-    }
-
-    public T getData() {
-        return this.data;
-    }
+	public void setNext(Node<T> next) {
+		this.next = next;
+	}
 }
