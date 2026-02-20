@@ -6,7 +6,7 @@ import javax.print.attribute.standard.PresentationDirection;
 
 public class LinkedListTest {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         LinkedList<Integer> underTest = new SimpleLinkedList<>();
 
         underTest.addNode(5);
@@ -115,5 +115,5 @@ public class LinkedListTest {
         reverse1.addNode(1);
         reverse1.reverseList();
         reverse1.printNodes();
-    }
+    }*/
 }
