@@ -3,6 +3,7 @@ package com.kiran.collections.stack;
 public class StackWithLinkedListTest {
     public static void main(String[] args) {
         StackWithLinkedList<Integer> underTest = new StackWithLinkedList<Integer>(5);
+
         underTest.push(1);
         underTest.push(2);
         underTest.push(3);
