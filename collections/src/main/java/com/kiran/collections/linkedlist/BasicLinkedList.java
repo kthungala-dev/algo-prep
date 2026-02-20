@@ -7,6 +7,7 @@ public class BasicLinkedList<T extends Comparable<T>> implements PracticeLinkedL
     public BasicLinkedList() {
     }
 
+    // Need to change
     public void printElements() {
         if (head == null) {
             System.out.println("its empty");
